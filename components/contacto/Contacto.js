@@ -20,7 +20,7 @@ export default function Contacto() {
             >                
             </GoogleMapReact>
         </div>
-        <div className='absolute '>
+        <div className=' '>
             <div className='px-28 pb-28 flex space-x-8 '>
                 <div className='w-3/4 space-y-5'>
                     <div className='flex justify-between space-x-5 '>

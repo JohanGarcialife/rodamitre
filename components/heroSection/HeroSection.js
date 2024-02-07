@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 export default function HeroSection() {
   return (
     <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen  overflow-hidden">
-        <Layout> 
+        
           <div className="p-28 pb-28">
             <div className="mt-20 flex">
               <div className="mr-20 w-1/3">
@@ -60,7 +60,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-           </Layout>
+           
            <div className='absolute bottom-0'>           
             <div className='flex items-center justify-center'>
               <img src='./mask.svg' className='scale-375 z-50'/>
