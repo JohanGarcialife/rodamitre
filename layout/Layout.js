@@ -6,7 +6,7 @@ export default function Layout(props) {
     const {children} = props
   return (
     <div>       
-        <Header />
+        <Header className="absolute top-0"/>
         {children}
         <Footer />
     </div>
