@@ -5,7 +5,7 @@ import React from 'react'
 export default function Layout(props) {
     const {children} = props
   return (
-    <div>       
+    <div className='relative'>       
         <Header className="absolute top-0 z-40"/>
         {children}
         <Footer />
