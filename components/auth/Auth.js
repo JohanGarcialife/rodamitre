@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function Auth(props) {
     const {show, setShow} = props
   return (
-    <div className='flex items-center gap-x-8 mr-20'>
+    <div className='flex items-center gap-x-8 mr-16'>
         <Registro 
         show={show} setShow={setShow}
         />
@@ -18,7 +18,7 @@ function Registro(props) {
     <>
     <div 
     onClick={() => setShow(!show)} 
-    className='font-bold text-white text-xs hover:opacity-50 cursor-pointer'>
+    className='font-bold text-white text-xs opacity-75 hover:opacity-100 cursor-pointer'>
         <p>
             REGISTRATE AQUÍ
         </p>
@@ -29,7 +29,7 @@ function Registro(props) {
 
 function Login() {
   return (
-    <div className='font-bold text-white text-xs hover:opacity-50 cursor-pointer'>
+    <div className='font-bold text-white text-xs opacity-75 hover:opacity-100 cursor-pointer'>
         <p>
             LOGIN
         </p>

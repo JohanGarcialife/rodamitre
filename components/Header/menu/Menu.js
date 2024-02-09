@@ -6,9 +6,9 @@ export default function Menu() {
 
 
   return (
-    <div className='flex items-center space-x-12 py-4'>
+    <div className='flex items-center space-x-12 pb-4 pt-2'>
       <Image src="/rodamitre-logo.png" height={100} width={200} alt="Roadmitre logo"  className=""/>
-      <div className='flex space-x-2 items-center'>
+      <div className='flex space-x-1 items-center'>
         <div className={active === "#" ? 'cursor-pointer rounded-sm px-4 py-1 bg-amarillo' : 'cursor-pointer rounded-sm px-4 py-1 hover:animate-open hover:bg-amarillo '}>
           <p >
             INICIO

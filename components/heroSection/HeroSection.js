@@ -5,12 +5,12 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function HeroSection() {
   return (
-    <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen  overflow-hidden">
+    <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden">
         
-          <div className="p-28 pb-28">
+          <div className="px-[104px] py-24">
             <div className="mt-20 flex">
-              <div className="mr-20 w-1/3">
-                <h1 className="text-3xl tracking-wide mb-5"><span className="font-semibold">Más de 25 años</span> en la distribución de Autopartes</h1>
+              <div className="mr-10 w-2/5 mt-5">
+                <h1 className="text-3xl tracking-wide mb-5 text-white"><span className="font-semibold">Más de 25 años</span> en la distribución de Autopartes</h1>
                 <div className="text-white flex w-full items-center space-x-4 border-b border-dotted	border-white py-3">
                   <FaCheck />
                   <p>Servicio</p>
@@ -37,12 +37,12 @@ export default function HeroSection() {
                 </div>
               </div>
 
-              <div className="bg-white/25 p-6 w-1/3 h-fit">
-                <div className="flex justify-center text-center mb-5">
+              <div className="bg-white/25 p-8 w-2/5 h-fit">
+                <div className="flex justify-center text-center mb-5 px-10">
                   <p className="text-white font-bold text-3xl">Ingresa a nuestro Catálogo</p>
                 </div>
                 <div className="flex items justify-between">
-                  <div className="mt-2 space-y-6 w-1/3">                    
+                  <div className="mt-2 space-y-6 w-1/3 ">                    
                       <p>Usuario</p>                     
                       <p>Contraseña</p>  
                   </div>   

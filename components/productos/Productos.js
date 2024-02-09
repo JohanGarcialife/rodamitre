@@ -8,32 +8,32 @@ export default function Productos() {
     <div className='bg-[#f5f5f5] p-28 pt-0'>
         <div className='flex items-center w-full mb-10'>
         <PiDotsThreeOutlineFill className='text-[#EAEAEA] text-4xl font-bold mr-5' />
-        <p className="text-gris-medio text-4xl font-bold">PRODUCTOS</p>
+        <p className="text-gris-medio text-5xl font-bold">PRODUCTOS</p>
         </div>
         <div className='grid grid-cols-3 gap-8'>
             <div className='bg-[#EEEEEE] p-6 pb-12 rounded-md hover:bg-white hover:text-amarillo hover:shadow-2xl'>
                 <Image src="/icono-motor.png" height={100} width={100} alt="logo"  className=""/>
-                <p className='text-[#424242] text-xl font-semibold'>MOTOR</p>
+                <p className='text-[#424242] text-2xl font-semibold'>MOTOR</p>
             </div>
             <div className='bg-[#EEEEEE] p-6 pb-12 rounded-md hover:bg-white hover:text-amarillo hover:shadow-2xl'>
                 <Image src="/icono-suspension.png" height={100} width={100} alt="logo"  className=""/>
-                <p className='text-[#424242] text-xl font-semibold'>SUSPENSION</p>
+                <p className='text-[#424242] text-2xl font-semibold'>SUSPENSION</p>
             </div>
             <div className='bg-[#EEEEEE] p-6 pb-12 rounded-md hover:bg-white hover:text-amarillo hover:shadow-2xl'>
                 <Image src="/icono-encendido.png" height={100} width={100} alt="logo"  className=""/>
-                <p className='text-[#424242] text-xl font-semibold'>ENCENDIDO</p>
+                <p className='text-[#424242] text-2xl font-semibold'>ENCENDIDO</p>
             </div>
             <div className='bg-[#EEEEEE] p-6 pb-12 rounded-md hover:bg-white hover:text-amarillo hover:shadow-2xl'>
                 <Image src="/icono-freno.png" height={100} width={100} alt="logo"  className=""/>
-                <p className='text-[#424242] text-xl font-semibold'>FRENOS Y EMBRIAGUE</p>
+                <p className='text-[#424242] text-2xl font-semibold'>FRENOS Y EMBRIAGUE</p>
             </div>
             <div className='bg-[#EEEEEE] p-6 pb-12 rounded-md hover:bg-white hover:text-amarillo hover:shadow-2xl'>
                 <Image src="/icono-rodamiento.png" height={100} width={100} alt="logo"  className=""/>
-                <p className='text-[#424242] text-xl font-semibold'>RODAMIENTOS</p>
+                <p className='text-[#424242] text-2xl font-semibold'>RODAMIENTOS</p>
             </div>
             <div className='bg-[#EEEEEE] p-6 pb-12 rounded-md hover:bg-white hover:text-amarillo hover:shadow-2xl'>
                 <Image src="/icono-transmision.png" height={100} width={100} alt="logo"  className=""/>
-                <p className='text-[#424242] text-xl font-semibold'>TRANSMISION</p>
+                <p className='text-[#424242] text-2xl font-semibold'>TRANSMISION</p>
             </div>
         </div>
     </div>

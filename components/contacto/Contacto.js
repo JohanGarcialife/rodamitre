@@ -13,12 +13,12 @@ export default function Contacto() {
   return (
     <div className="bg-fondo-gris relative">
         <div  style={{ height: '100vh', width: '100%' }}>
-            <GoogleMapReact
+            {/* <GoogleMapReact
                 bootstrapURLKeys={{ key: "" }}
                 defaultCenter={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
             >                
-            </GoogleMapReact>
+            </GoogleMapReact> */}
         </div>
         <div className=' '>
             <div className='px-28 pb-28 flex space-x-8 '>
