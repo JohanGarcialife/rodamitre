@@ -5,7 +5,7 @@ import { PiDotsThreeOutlineFill } from "react-icons/pi";
 
 export default function Productos() {
   return (
-    <div className='bg-[#f5f5f5] p-28 pt-0'>
+    <div className='bg-[#f5f5f5] px-12 py-28 pt-0'>
         <div className='flex items-center w-full mb-10'>
         <PiDotsThreeOutlineFill className='text-[#EAEAEA] text-4xl font-bold mr-5' />
         <p className="text-gris-medio text-5xl font-bold">PRODUCTOS</p>

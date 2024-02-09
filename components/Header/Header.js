@@ -7,9 +7,8 @@ export default function Header(props) {
     const {show, setShow} = props
 
     return (
-        <div className='absolute top-0 w-full z-10'>
-            
-            <div className='px-[104px] '>
+        <div className='absolute top-0 w-full z-10'>            
+            <div className='px-12'>
                 <Topbar show={show} setShow={setShow} />
                 <Menu />
             </div>

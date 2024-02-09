@@ -4,11 +4,11 @@ import React from 'react'
 export default function Nosotros() {
   return (
     <>
-        <div className='p-28 bg-white'>
-            <h2 className='text-amarillo text-5xl font-semibold mb-5'>NUESTRA TRAYECTORIA</h2>
+        <div className='px-12 py-28 bg-white'>
+            <h2 className='text-amarillo text-6xl font-semibold mb-5'>NUESTRA TRAYECTORIA</h2>
             <h3 className='text-black font-light text-3xl mb-10'>25 AÑOS EN LA DISTRIBUCION DE AUTOPARTES</h3>
 
-            <div className='flex justify-between space-x-4'>
+            <div className='flex justify-between space-x-11'>
                 <div className='w-1/3'>
                     <p className='text-gris font-extrabold text-4xl mb-5'>Nos dedicamos a cubrir las necesidades de las casas de repuestos automotrices</p>
                     <div className='h-1 w-1/4 bg-gris/50 '></div>
@@ -21,7 +21,7 @@ export default function Nosotros() {
                 </div>
             </div>
         </div>
-        <div className='bg-[#f5f5f5] p-28'>
+        <div className='bg-[#f5f5f5] px-12 py-28'>
             <div className='flex justify-between space-x-4 w-full'>
                 <div className='w-1/3'>
                     <div> 

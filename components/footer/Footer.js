@@ -6,7 +6,7 @@ import { TiSocialGooglePlus } from "react-icons/ti";
 
 export default function Footer() {
   return (
-    <div className='px-28 py-12 bg-azul flex items-center justify-between'>
+    <div className='px-20 py-12 bg-azul flex items-center justify-between'>
         <div>
             <p className='text-sm'>© 2016 All rights reserved.</p>
         </div>
