@@ -4,7 +4,7 @@ import React from 'react'
 export default function Nosotros() {
   return (
     <>
-        <div className='px-12 py-28 bg-white'>
+        <div className='px-12 py-28 bg-white' id="nosotros">
             <h2 className='text-amarillo text-6xl font-semibold mb-5'>NUESTRA TRAYECTORIA</h2>
             <h3 className='text-black font-light text-3xl mb-10'>25 AÑOS EN LA DISTRIBUCION DE AUTOPARTES</h3>
 

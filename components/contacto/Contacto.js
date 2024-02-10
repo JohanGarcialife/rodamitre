@@ -8,7 +8,7 @@ export default function Contacto() {
     const [change, setChange] = useState(true)
 
   return (
-    <div className="bg-fondo-gris relative">
+    <div className="bg-fondo-gris relative" id="contacto">
         <div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.85155748978!2d-58.35792142506474!3d-34.633191359054024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334b939f74725%3A0x3571b6d1cfddb34!2sCaboto%201129%2C%20C1157ABU%20DF%2C%20Argentina!5e0!3m2!1ses!2sve!4v1707484496887!5m2!1ses!2sve" width={width - 21} height={height + 200}  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div className=' absolute w-fit left-72 top-40'>

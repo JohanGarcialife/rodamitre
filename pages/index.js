@@ -16,8 +16,8 @@ export default function Home() {
       <HeroSection /> 
       <Distribuidores />
       <Nosotros />
-      <Productos />
-      <Contacto />
+      <Productos/>
+      <Contacto  />
     </Layout>
   );
 }

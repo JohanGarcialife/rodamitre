@@ -63,7 +63,7 @@ export default function HeroSection() {
            
            <div className='absolute bottom-0'>           
             <div className='flex items-center justify-center'>
-              <img src='./mask.svg' className='scale-375 z-50'/>
+              <img src='./mask.svg' className='scale-375 z-40'/>
               <IoIosArrowDown  className='absolute -bottom-0 max-w-screen  scale-150 text-gris z-50'/>
             </div>
            </div>

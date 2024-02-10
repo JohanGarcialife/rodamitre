@@ -10,7 +10,7 @@ export default function Layout(props) {
   return (
     <>
     {show === true ?
-               <RegisterBanner />
+               <RegisterBanner show={show} setShow={setShow}/>
                 : null}      
     <div className="relative"> 
         <Header className="absolute top-0 z-50" show={show} setShow={setShow}/>

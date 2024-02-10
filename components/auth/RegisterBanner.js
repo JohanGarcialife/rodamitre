@@ -1,7 +1,9 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
-export default function RegisterBanner() {
+export default function RegisterBanner(props) {
+    const {show, setShow} = props
+    
   return (
      <div className='bg-white shadow-inner-xl px-12 py-10 '>
                     <div onClick={() => setShow(!show)} className='absolute top-6 right-6 bg-gray-200 text-black rounded-full text-xl p-3 cursor-pointer hover:bg-gray-400 hover:p-4 '>
