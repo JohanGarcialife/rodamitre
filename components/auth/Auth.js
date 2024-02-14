@@ -1,14 +1,18 @@
 import React, { useState } from 'react'
 
 export default function Auth(props) {
-    const {show, setShow} = props
+    const {show, setShow, handleOpen, handleClose} = props
+
   return (
+    <>
     <div className='flex items-center gap-x-8 mr-16'>
         <Registro 
         show={show} setShow={setShow}
         />
-        <Login/>
+        <Login handleOpen={handleOpen} handleClose={handleClose}/>
     </div>
+    
+    </>
   )
 }
 
@@ -16,7 +20,7 @@ function Registro(props) {
     const {show, setShow} = props
   return (
     <>
-    <div 
+    <div
     onClick={() => setShow(!show)} 
     className='font-bold text-white text-xs opacity-75 hover:opacity-100 cursor-pointer'>
         <p>
@@ -27,12 +31,16 @@ function Registro(props) {
   )
 }
 
-function Login() {
+function Login(props) { 
+  const {handleOpen, handleClose} = props
   return (
-    <div className='font-bold text-white text-xs opacity-75 hover:opacity-100 cursor-pointer'>
+    <>    
+    <div onClick={handleOpen} className='font-bold text-white text-xs opacity-75 hover:opacity-100 cursor-pointer'>
         <p>
             LOGIN
         </p>
     </div>
+    
+    </>
   )
 }

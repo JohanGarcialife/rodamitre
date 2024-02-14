@@ -7,7 +7,7 @@ import { FaFacebookF } from "react-icons/fa";
 
 
 export default function Topbar(props) {
-  const {show, setShow} = props
+  const {show, setShow, handleOpen, handleClose} = props
     const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -44,6 +44,7 @@ export default function Topbar(props) {
       <div className='flex items-center'>
         <Auth 
         show={show} setShow={setShow}
+        handleOpen={handleOpen} handleClose={handleClose}
         />
       </div>
     </div> :

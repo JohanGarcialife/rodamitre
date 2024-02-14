@@ -1,9 +1,27 @@
 import React from 'react'
-import Layout from "@/layout/Layout";
 import { FaCheck } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import useWindowSize from '@/hooks/useWindowSize';
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export default function HeroSection() {
+export default function HeroSection(props) {
+  const {isLogin, setIsLogin} = props
+  const {width} = useWindowSize() 
+
+  return (
+     <>
+        {isLogin === false ? <HeroNoLogged isLogin={isLogin} setIsLogin={setIsLogin}/> 
+        :       
+        <HeroLogged isLogin={isLogin} setIsLogin={setIsLogin} width={width} />}
+   </>
+  )
+}
+
+function HeroNoLogged(props) {
+  const {isLogin, setIsLogin} = props
   return (
     <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden">
         
@@ -51,7 +69,7 @@ export default function HeroSection() {
                     <input className="pl-3 py-1 w-full rounded-md" type="text" placeholder="Username"/>                   
                     <input className="pl-3 py-1 w-full rounded-md" type="text" placeholder="Your password"/>
 
-                    <button className="px-4 py-2 bg-amarillo text-white rounded-sm hover:bg-azul">
+                    <button onClick={() => setIsLogin(!isLogin) } className="px-4 py-2 bg-amarillo text-white rounded-sm hover:bg-azul">
                       INGRESAR
                     </button>
                    </div>
@@ -68,5 +86,54 @@ export default function HeroSection() {
             </div>
            </div>
       </div>
+  )
+}
+
+function HeroLogged(props) {
+  const {isLogin, setIsLogin, width} = props
+  
+function SampleNextArrow(props) {
+  const {  style, onClick } = props;
+  return (
+    <div
+      
+      style={{ ...style, display: "block", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const {  style, onClick } = props;
+
+  
+
+  return (
+    <div      
+      style={{ ...style, display: "block", background: "green" }}
+      onClick={onClick}
+    />
+  );
+}
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 5000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />   
+  };
+  return (
+    <div>
+      <Slider {...settings}>
+        {width && <Image src="/Banner1.png" width={width} height={400} alt="banner"  className="w-screen"/>}
+        {width && <Image src="/Banner2.png" width={width} height={400} alt="banner"  className="w-screen"/>}
+        {width && <Image src="/Banner3.png" width={width} height={400} alt="banner"  className="w-screen"/>}
+      </Slider>
+    </div>
   )
 }
