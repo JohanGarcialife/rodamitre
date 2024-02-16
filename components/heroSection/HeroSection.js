@@ -1,34 +1,24 @@
-import React from 'react'
+import React from "react";
 import { FaCheck } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
-import useWindowSize from '@/hooks/useWindowSize';
-import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import BuscadorFamilia from "../buscadores/BuscadorFamilia";
+import BuscadorVehiculo from "../buscadores/BuscadorVehiculo";
+import BuscadorRapida from "../buscadores/BuscadorRapida";
 
 export default function HeroSection(props) {
-  const {isLogin, setIsLogin} = props
-  const {width} = useWindowSize() 
+  const { isLogin, setIsLogin, buscador } = props;
 
-  return (
-     <>
-        {isLogin === false ? <HeroNoLogged isLogin={isLogin} setIsLogin={setIsLogin}/> 
-        :       
-        <HeroLogged isLogin={isLogin} setIsLogin={setIsLogin} width={width} />}
-   </>
-  )
-}
-
-function HeroNoLogged(props) {
-  const {isLogin, setIsLogin} = props
   return (
     <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden">
-        
+      {isLogin === false && (
+        <>
           <div className="px-12 py-24">
             <div className="mt-20 flex">
               <div className="mr-10 w-2/5 mt-5">
-                <h1 className="text-3xl tracking-wide mb-5 text-white font-body"><span className="font-semibold">Más de 25 años</span> en la distribución de Autopartes</h1>
+                <h1 className="text-3xl tracking-wide mb-5 text-white font-body">
+                  <span className="font-semibold">Más de 25 años</span> en la
+                  distribución de Autopartes
+                </h1>
                 <div className="text-white flex w-full items-center space-x-4 border-b border-dotted	border-white py-3">
                   <FaCheck />
                   <p>Servicio</p>
@@ -57,83 +47,54 @@ function HeroNoLogged(props) {
 
               <div className="bg-white/25 p-8 w-2/5 h-fit">
                 <div className="flex justify-center text-center mb-5 px-10">
-                  <p className="text-white font-bold text-3xl">Ingresa a nuestro Catálogo</p>
+                  <p className="text-white font-bold text-3xl">
+                    Ingresa a nuestro Catálogo
+                  </p>
                 </div>
                 <div className="flex items justify-between">
-                  <div className="mt-2 space-y-6 w-1/3 ">                    
-                      <p className='text-white'>Usuario</p>                     
-                      <p className='text-white'>Contraseña</p>  
-                  </div>   
+                  <div className="mt-2 space-y-6 w-1/3 ">
+                    <p className="text-white">Usuario</p>
+                    <p className="text-white">Contraseña</p>
+                  </div>
 
                   <div className="space-y-6 w-2/3">
-                    <input className="pl-3 py-1 w-full rounded-md" type="text" placeholder="Username"/>                   
-                    <input className="pl-3 py-1 w-full rounded-md" type="text" placeholder="Your password"/>
+                    <input
+                      className="pl-3 py-1 w-full rounded-md"
+                      type="text"
+                      placeholder="Username"
+                    />
+                    <input
+                      className="pl-3 py-1 w-full rounded-md"
+                      type="text"
+                      placeholder="Your password"
+                    />
 
-                    <button onClick={() => setIsLogin(!isLogin) } className="px-4 py-2 bg-amarillo text-white rounded-sm hover:bg-azul">
+                    <button
+                      onClick={() => setIsLogin(!isLogin)}
+                      className="px-4 py-2 bg-amarillo text-white rounded-sm hover:bg-azul"
+                    >
                       INGRESAR
                     </button>
-                   </div>
-                  
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-           
-           <div className='absolute bottom-0'>           
-            <div className='flex items-center justify-center'>
-              <img src='./mask.svg' className='scale-375 z-40'/>
-              <IoIosArrowDown  className='absolute -bottom-0 max-w-screen  scale-150 text-gris z-50'/>
+          <div className="absolute bottom-0">
+            <div className="flex items-center justify-center">
+              <img src="./mask.svg" className="scale-375 z-40" />
+              <IoIosArrowDown className="absolute -bottom-0 max-w-screen  scale-150 text-gris z-50" />
             </div>
-           </div>
-      </div>
-  )
-}
-
-function HeroLogged(props) {
-  const {isLogin, setIsLogin, width} = props
-  
-function SampleNextArrow(props) {
-  const {  style, onClick } = props;
-  return (
-    <div
-      
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
-
-function SamplePrevArrow(props) {
-  const {  style, onClick } = props;
-
-  
-
-  return (
-    <div      
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 5000,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />   
-  };
-  return (
-    <div>
-      <Slider {...settings}>
-        {width && <Image src="/Banner1.png" width={width} height={400} alt="banner"  className="w-screen"/>}
-        {width && <Image src="/Banner2.png" width={width} height={400} alt="banner"  className="w-screen"/>}
-        {width && <Image src="/Banner3.png" width={width} height={400} alt="banner"  className="w-screen"/>}
-      </Slider>
+          </div>
+        </>
+      )}
+      {isLogin === true && (
+        <div className="px-12 pt-52 pb-24">
+          {buscador === "Familia" && <BuscadorFamilia />}
+          {buscador === "Vehiculo" && <BuscadorVehiculo />}
+          {buscador === "Rapida" && <BuscadorRapida />}
+        </div>
+      )}
     </div>
-  )
+  );
 }

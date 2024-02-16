@@ -3,11 +3,12 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import { AiFillInstagram } from "react-icons/ai";
 import { FaFacebookF } from "react-icons/fa";
+import { IoArrowBackCircleOutline } from 'react-icons/io5';
 
 
 
 export default function Topbar(props) {
-  const {show, setShow, handleOpen, handleClose} = props
+  const {show, setShow, handleOpen, handleClose, isLogin, setIsLogin, } = props
     const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -41,12 +42,14 @@ export default function Topbar(props) {
           </p>
         </div>
       </div>
-      <div className='flex items-center'>
+      {isLogin === false ? <div className='flex items-center'>
         <Auth 
         show={show} setShow={setShow}
-        handleOpen={handleOpen} handleClose={handleClose}
+        handleOpen={handleOpen} handleClose={handleClose} 
         />
-      </div>
+      </div> :
+      <IoArrowBackCircleOutline onClick={() => setIsLogin(!isLogin)} className='text-white text-3xl font-light cursor-pointer'/>  
+    }
     </div> :
      <div className="flex justify-between w-full py-4 ">
       <div className="flex gap-x-8 items-center ">

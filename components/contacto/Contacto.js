@@ -3,23 +3,10 @@ import useWindowSize from '@/hooks/useWindowSize'
 import Image from 'next/image'
 import { CiCirclePlus } from "react-icons/ci";
 
-export default function Contacto(props) {
-    const {isLogin, setIsLogin} = props
+export default function Contacto() {
     const {width, height} = useWindowSize() 
-    
-
-  return (
-    <>
-        {isLogin === false ? <ContactoNoLogged isLogin={isLogin} setIsLogin={setIsLogin} width={width} height={height} /> 
-        :       
-        <ContactoLogged isLogin={isLogin} setIsLogin={setIsLogin}  />}
-   </>
-  )
-}
-
-function ContactoNoLogged(props) {
-    const {width, height} = props
     const [change, setChange] = useState(true)
+
     return (
     <div className="bg-fondo-gris relative" id="contacto">
         <div>
@@ -97,63 +84,3 @@ function ContactoNoLogged(props) {
   )
 }
 
-function ContactoLogged(props) {
-    return(
-        <>
-        <div className='bg-white px-20 py-20'>
-            <div className='relative pb-3 w-full border-b border-black'>
-                <h2 className='text-gris font-bold text-2xl'>RODAMITRE, Distribuidor de autopartes</h2>
-                <div className='absolute -bottom-[1px] left-0 h-1 w-[12%] bg-amarillo z-10'></div>
-            </div>
-            <div className='flex'>            
-                <div className='w-1/2 p-10 '>
-                    <div className='flex justify-center mb-5'>
-                        <p className='text-black font-semibold text-xl'>Completa tus datos y déjanos tu consulta</p>
-                    </div>
-                    <div className='space-y-4'>
-                        <div className='bg-[#FFF7E2] px-3 py-2 rounded-md'>
-                            <input type='text' placeholder='Nombre' className='bg-transparent w-full text-black px-3'/>
-                        </div>
-                        <div className='bg-[#FFF7E2] px-3 py-2 rounded-md'>
-                            <input type='mail' placeholder='Mail' className='bg-transparent w-full text-black px-3'/>
-                        </div>
-                        <div className='bg-[#FFF7E2] px-3 py-2 rounded-md'>
-                            <input type='text' placeholder='Teléfono' className='bg-transparent w-full text-black px-3'/>
-                        </div>
-                        <div className='bg-[#FFF7E2] px-3 py-2 rounded-md'>
-                            <textarea rows="8"  placeholder='Mensaje' className='bg-transparent w-full text-black px-3'/>
-                        </div>
-                        <div className='flex justify-center'>
-                            <button className='text-white bg-azul px-5 py-1 rounded-md font-semibold text-lg'>Enviar</button>
-                        </div>
-                    </div>
-                </div>
-                <div className='w-1/2 p-10'>
-                     <div className='flex justify-center mb-5'>
-                        <p className='text-black font-semibold text-xl'>Información de contacto</p>
-                    </div>
-                    <div className='text-gris text-xl mb-5'>
-                         <p className='font-bold'>Dirección</p>
-                         <p >Caboto 1129, La Boca (1157), Buenos Aires</p>
-                    </div>
-                    <div className='text-gris text-xl mb-5'>
-                         <p className='font-bold'>Teléfono</p>
-                         <p >3980-7075 (ROTATIVA)</p>
-                    </div>
-                    <div className='text-gris text-xl mb-5'>
-                         <p className='font-bold'>Email</p>
-                         <p >ventas@rodamitre.com.ar</p>
-                         <p >administración@rodamitre.com.ar</p>
-                    </div>
-                    <div className='text-gris text-xl mb-5'>
-                         <p className='font-bold'>Whatsapp</p>
-                         <p >Zona 1: (+54) (11) 4028-4558</p>
-                         <p >Zona 2: (+54) (11) 2365-6769</p>
-                         <p >Zona 3: (+54) (11) 5826-8501</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </>
-    )
-}
