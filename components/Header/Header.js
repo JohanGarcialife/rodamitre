@@ -124,17 +124,26 @@ export default function Header(props) {
               </div>
             </div>
             <div className="flex items-center pb-3 text-lg space-x-5">
-              <div className="flex items-center  space-x-1 cursor-pointer">
+              <div
+                onClick={() => setBuscador("Oferta")}
+                className="flex items-center  space-x-1 cursor-pointer"
+              >
                 <p className="text-white  text-center">Ofertas</p>
                 <IoIosArrowDown className="text-white text-center" />
               </div>
 
-              <div className="flex items-center  space-x-1 cursor-pointer">
+              <div
+                onClick={() => setBuscador("Reclamo")}
+                className="flex items-center  space-x-1 cursor-pointer"
+              >
                 <p className="text-white  text-center">Reclamos</p>
                 <IoIosArrowDown className="text-white text-center" />
               </div>
-              <div className="flex items-center  space-x-1 cursor-pointer">
-                <p className="text-white   text-center">Administración</p>
+              <div
+                onClick={() => setBuscador("Garantia")}
+                className="flex items-center  space-x-1 cursor-pointer"
+              >
+                <p className="text-white text-center">Garantías</p>
                 <IoIosArrowDown className="text-white text-center" />
               </div>
             </div>

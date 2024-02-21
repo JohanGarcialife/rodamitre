@@ -18,7 +18,7 @@ export default function RegisterBanner(props) {
                             <div className='grid grid-cols-3 gap-5 w-full'>
                                 <div className='flex items-center'>
                                     <div className='bg-amarillo font-bold text-white rounded-full px-3 py-1 w-fit mb-3'>1</div>
-                                    <p className='text-black ml-4'> Envianos un mail solicitando una cuenta</p>
+                                    <p className='text-black/70 ml-4'> Envianos un mail solicitando una cuenta</p>
                                 </div>
                                 <div className='flex items-center w-full'>
                                     <div className='bg-amarillo font-bold text-white rounded-full px-3 py-1 w-fit mb-3'>2</div>
