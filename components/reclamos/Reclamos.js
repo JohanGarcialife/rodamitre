@@ -19,9 +19,11 @@ export default function Reclamos() {
 
   return (
     <>
-      <div className="flex space-x-5">
+      <div className="flex space-x-5 font-montserrat">
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-sm ">Origen del Pedido</p>
+          <p className="text-[#969696] font-bold text-xs uppercase ">
+            Origen del Pedido
+          </p>
           <select
             className="pl-4 w-full text-black"
             label={origen}
@@ -35,7 +37,7 @@ export default function Reclamos() {
           </select>
         </div>
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-sm ">
+          <p className="text-[#969696] font-bold text-xs uppercase ">
             Fecha de Factura / Pedido
           </p>
           <input
@@ -47,7 +49,7 @@ export default function Reclamos() {
           />
         </div>
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-sm ">
+          <p className="text-[#969696] font-bold text-xs uppercase">
             Numero de Factura / Pedido
           </p>
           <input
@@ -60,8 +62,10 @@ export default function Reclamos() {
           />
         </div>
       </div>
-      <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2 mt-5">
-        <p className="text-[#969696] font-bold text-sm ">Comentario</p>
+      <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2 mt-5 font-montserrat">
+        <p className="text-[#969696] font-bold text-xs uppercase ">
+          Comentario
+        </p>
         <textarea
           textarea
           rows="8"
@@ -69,7 +73,7 @@ export default function Reclamos() {
           className="pl-4 w-full h-full"
         ></textarea>
       </div>
-      <button className="bg-amarillo hover:bg-azul text-white rounded-md px-4 py-2 mt-5">
+      <button className="bg-amarillo hover:bg-azul text-white rounded-md px-4 py-2 mt-5 font-montserrat uppercase">
         Enviar
       </button>
     </>

@@ -4,7 +4,7 @@ import { IoClose } from "react-icons/io5";
 
 export default function BuscadorRapida() {
   return (
-    <div className="flex space-x-10 w-full">
+    <div className="flex space-x-10 w-full font-montserrat">
       <div className="w-full space-y-5">
         <div className="bg-white rounded-lg border border-black flex">
           <div className="bg-amarillo text-white rounded-l-lg flex space-x-3 text-balck p-3 w-1/5">

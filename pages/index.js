@@ -74,7 +74,7 @@ export default function Home() {
         {isLogin === false && <Contacto />}
       </Layout>
       <Modal open={open} onClose={handleClose} className="max-w-screen">
-        <div className="flex items-center justify-center w-screen h-screen">
+        <div className="flex items-center justify-center w-screen h-screen font-montserrat">
           <form
             className="relative w-96 bg-[#EDEDED] p-10 rounded-sm"
             onSubmit={formik.handleSubmit}

@@ -7,7 +7,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 export default function Footer() {
   return (
-    <div className="px-20 py-12 bg-azul w-full ">
+    <div className="px-20 py-12 bg-azul w-full font-montserrat">
       <div className="flex justify-center items-center">
         <Image
           src="/rodamitre-logo.png"
@@ -18,7 +18,7 @@ export default function Footer() {
         />
       </div>
       <div>
-        <div className="flex justify-center items-start space-x-10 mt-10 pb-10 border-b border-white">
+        <div className="flex justify-center items-start space-x-10 mt-10 pb-10 border-b border-white font-montserrat">
           <div>
             <div className="flex items-center space-x-2 text-amarillo mb-3">
               <IoLocationSharp />
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mt-3 text-center">
+      <div className="mt-3 text-center font-montserrat">
         <p className=" text-white">© 2019 Rodamitre</p>
         <p className=" text-white">
           Desarrollado por{" "}

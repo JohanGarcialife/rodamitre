@@ -36,7 +36,7 @@ export default function HeroSection(props) {
   });
 
   return (
-    <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden">
+    <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden font-montserrat">
       {isLogin === false && (
         <>
           <div className="px-12 py-24">
@@ -132,7 +132,7 @@ export default function HeroSection(props) {
         </>
       )}
       {isLogin === true && (
-        <div className="px-12 pt-52 pb-24">
+        <div className="px-2 pt-52 pb-24">
           {buscador === "Familia" && <BuscadorFamilia />}
           {buscador === "Vehiculo" && <BuscadorVehiculo />}
           {buscador === "Rapida" && <BuscadorRapida />}

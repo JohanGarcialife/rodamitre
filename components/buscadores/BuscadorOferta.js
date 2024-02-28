@@ -20,9 +20,11 @@ export default function BuscadorOferta() {
 
   return (
     <>
-      <div className="flex space-x-5">
+      <div className="flex space-x-5 font-montserrat">
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-sm ">Vehículo</p>
+          <p className="text-[#969696] font-bold text-xs uppercase ">
+            Vehículo
+          </p>
           <select
             className="pl-4 w-full text-black"
             label={vehiculo}
@@ -36,7 +38,7 @@ export default function BuscadorOferta() {
           </select>
         </div>
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-sm ">Familia</p>
+          <p className="text-[#969696] font-bold text-xs uppercase ">Familia</p>
           <select
             className="pl-4 w-full text-black"
             label={familia}
@@ -50,7 +52,7 @@ export default function BuscadorOferta() {
           </select>
         </div>
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-sm ">Marca</p>
+          <p className="text-[#969696] font-bold text-xs uppercase">Marca</p>
           <select
             className="pl-4 w-full text-black"
             label={marca}
@@ -62,9 +64,9 @@ export default function BuscadorOferta() {
           </select>
         </div>
       </div>
-      <div className=" flex justify-center ">
+      <div className=" flex justify-center font-montserrat">
         <table className="w-full mt-5  ">
-          <thead className="bg-amarillo text-black rounded-t-lg p-5 flex justify-between w-full ">
+          <thead className="bg-amarillo text-black rounded-t-lg p-5 flex justify-between w-full uppercase ">
             <td className="w-full text-center font-bold ">Artículo</td>
             <td className="w-full text-center font-bold ">Marca</td>
             <td className="w-full text-center font-bold ">Costo</td>

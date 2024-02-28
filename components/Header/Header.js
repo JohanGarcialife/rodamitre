@@ -87,8 +87,9 @@ export default function Header(props) {
             />
             <div className="pb-3">
               <div className="py-3 mb-3 border-b border-white w-full">
-                <p className="text-white text-2xl  text-center">Búsquedas</p>
-                {/* <input type='text ' className='bg-transparent' /> */}
+                <p className="text-white text-2xl font-montserrat text-center">
+                  BUSQUEDAS
+                </p>
               </div>
               <div className="flex items-center space-x-5">
                 <p
@@ -99,7 +100,7 @@ export default function Header(props) {
                       : "text-white text-lg text-center cursor-pointer"
                   }
                 >
-                  Familia
+                  FAMILIA
                 </p>
                 <p
                   onClick={() => setBuscador("Vehiculo")}
@@ -109,7 +110,7 @@ export default function Header(props) {
                       : "text-white text-lg text-center cursor-pointer"
                   }
                 >
-                  Vehículo
+                  VEHICULO
                 </p>
                 <p
                   onClick={() => setBuscador("Rapida")}
@@ -119,7 +120,7 @@ export default function Header(props) {
                       : "text-white text-lg text-center cursor-pointer"
                   }
                 >
-                  Rápida
+                  RAPIDA
                 </p>
               </div>
             </div>
@@ -128,7 +129,7 @@ export default function Header(props) {
                 onClick={() => setBuscador("Oferta")}
                 className="flex items-center  space-x-1 cursor-pointer"
               >
-                <p className="text-white  text-center">Ofertas</p>
+                <p className="text-white  text-center">OFERTAS</p>
                 <IoIosArrowDown className="text-white text-center" />
               </div>
 
@@ -136,14 +137,14 @@ export default function Header(props) {
                 onClick={() => setBuscador("Reclamo")}
                 className="flex items-center  space-x-1 cursor-pointer"
               >
-                <p className="text-white  text-center">Reclamos</p>
+                <p className="text-white  text-center">RECLAMOS</p>
                 <IoIosArrowDown className="text-white text-center" />
               </div>
               <div
                 onClick={() => setBuscador("Garantia")}
                 className="flex items-center  space-x-1 cursor-pointer"
               >
-                <p className="text-white text-center">Garantías</p>
+                <p className="text-white text-center">GARANTIAS</p>
                 <IoIosArrowDown className="text-white text-center" />
               </div>
             </div>
