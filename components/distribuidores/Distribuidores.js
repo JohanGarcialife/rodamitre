@@ -1,44 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export default function Distribuidores() {
-  function SampleNextArrow(props) {
-    const { style, onClick } = props;
-    return (
-      <div
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
+  const [show, setShow] = useState(true);
 
-  function SamplePrevArrow(props) {
-    const { style, onClick } = props;
-    return (
-      <div
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 5000,
-    vertical: true,
-    verticalSwiping: true,
-    fade: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
+  setTimeout(function () {
+    setShow(!show);
+  }, 10000);
 
   return (
     <div
@@ -49,12 +17,7 @@ export default function Distribuidores() {
         <p className="text-gris mb-3 text-lg">DISTRIBUIDOR OFICIAL:</p>
         <div className="h-1 w-1/4 bg-gris "></div>
       </div>
-      <div className="w-3/4">
-        <Slider {...settings}>
-          <Logos />
-          <Logos2 />
-        </Slider>
-      </div>
+      <div className="w-3/4">{show === true ? <Logos /> : <Logos2 />}</div>
     </div>
   );
 }
@@ -67,21 +30,21 @@ function Logos() {
         height={88}
         width={177}
         alt="logo"
-        className="animate-fade-up animate-delay-400 "
+        className="animate-fade-up animate-delay-75 "
       />
       <Image
         src="/logo-dayco-2.png"
         height={88}
         width={177}
         alt="logo"
-        className="animate-fade-up animate-delay-500 "
+        className="animate-fade-up animate-delay-200"
       />
       <Image
         src="/logo-frasle-2.png"
         height={88}
         width={177}
         alt="logo"
-        className="animate-fade-up animate-delay-600 "
+        className="animate-fade-up animate-delay-500 "
       />
       <Image
         src="/logo-fremax-2.png"
@@ -102,28 +65,28 @@ function Logos2() {
         height={88}
         width={177}
         alt="logo"
-        className="animate-fade-up"
+        className="animate-fade-up animate-delay-75 "
       />
       <Image
         src="/logo-hescher-2.png"
         height={88}
         width={177}
         alt="logo"
-        className=""
+        className="animate-fade-up animate-delay-200 "
       />
       <Image
         src="/logo-peer-2.png"
         height={88}
         width={177}
         alt="logo"
-        className=""
+        className="animate-fade-up animate-delay-500 "
       />
       <Image
         src="/logo-cofap-2.png"
         height={88}
         width={177}
         alt="logo"
-        className=""
+        className="animate-fade-up animate-delay-700 "
       />
     </div>
   );
