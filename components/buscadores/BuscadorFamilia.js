@@ -44,7 +44,17 @@ const vehiculos = [
   "Mitsubishi",
 ];
 
+const marcas = ["SFK", "AYS", "COFAP", "BTP", "DAYCO", "DEXCO", "FAG"];
+
 function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
+function getStyles2(name, personName, theme) {
   return {
     fontWeight:
       personName.indexOf(name) === -1
@@ -54,7 +64,7 @@ function getStyles(name, personName, theme) {
 }
 
 export default function BuscadorFamilia() {
-  const [marca, setMarca] = useState(null);
+  const [marca, setMarca] = useState([]);
   const [familia, setFamilia] = useState(null);
   const [rubro, setRubro] = useState(null);
   const [quantities, setQuantities] = useState({});
@@ -63,7 +73,6 @@ export default function BuscadorFamilia() {
   const [cantidad3, setCantidad3] = useState(0);
   const [vehiculoName, setVehiculoName] = useState([]);
   const theme = useTheme();
-  console.log(vehiculoName.length);
 
   const handleQuantityChange = (productId, newQuantity) => {
     setQuantities((prevQuantities) => ({
@@ -72,15 +81,15 @@ export default function BuscadorFamilia() {
     }));
   };
 
-  function handleCantidad(event) {
+  function handleCantidad(e) {
     setCantidad(event.target.value);
   }
 
-  function handleCantidad2(event) {
+  function handleCantidad2(e) {
     setCantidad2(event.target.value);
   }
 
-  function handleCantidad3(event) {
+  function handleCantidad3(e) {
     setCantidad3(event.target.value);
   }
 
@@ -92,15 +101,27 @@ export default function BuscadorFamilia() {
       // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value
     );
+    setFamilia(null);
+    setMarca([]);
+    setRubro(null);
   };
-
-  function handleSelectMarca(event) {
-    setMarca(event.target.value);
-  }
 
   function handleSelectFamilia(event) {
     setFamilia(event.target.value);
+    setMarca([]);
+    setRubro(null);
   }
+
+  const handleChangeMarca = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setMarca(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
+    setRubro(null);
+  };
 
   function handleSelectRubro(event) {
     setRubro(event.target.value);
@@ -149,23 +170,7 @@ export default function BuscadorFamilia() {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
   }
-
-  const breadcrumbs2 = [
-    <Link
-      underline="hover"
-      key="1"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      Busqueda Familias
-    </Link>,
-
-    <p key="" className="text-gris">
-      Página 1 de 1
-    </p>,
-  ];
-
+  console.log(marca);
   const breadcrumbs = [
     <Link
       underline="hover"
@@ -192,6 +197,27 @@ export default function BuscadorFamilia() {
       </div>
     </Link>,
     <p key="" className="text-gris">
+      {familia}
+    </p>,
+    <Link
+      underline="hover"
+      key="2"
+      color="inherit"
+      href="/"
+      onClick={handleClick}
+    >
+      <div className="flex space-x-2 items-center">
+        {marca.map((marca) => (
+          <p key="" className="text-gris">
+            {marca}
+          </p>
+        ))}
+      </div>
+    </Link>,
+    <p key="" className="text-gris">
+      {rubro}
+    </p>,
+    <p key="" className="text-gris">
       Página 1 de 1
     </p>,
   ];
@@ -199,15 +225,9 @@ export default function BuscadorFamilia() {
     <>
       <div className="font-montserrat px-2">
         <div className="bg-white w-fit py-2 px-3 rounded-md">
-          {vehiculoName.length > 0 ? (
-            <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
-              {breadcrumbs}
-            </Breadcrumbs>
-          ) : (
-            <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
-              {breadcrumbs2}
-            </Breadcrumbs>
-          )}
+          <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
+            {breadcrumbs}
+          </Breadcrumbs>
         </div>
       </div>
       <div className="flex space-x-5 font-montserrat px-2 mt-5">
@@ -264,14 +284,40 @@ export default function BuscadorFamilia() {
           </Select>
         </div>
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-xs uppercase ">Marca</p>
+          <p className="text-[#969696] font-bold text-xs uppercase">Marca</p>
+
           <Select
-            className="pl-4 w-full text-black"
+            multiple
             value={marca}
-            onChange={handleSelectMarca}
+            onChange={handleChangeMarca}
+            input={<OutlinedInput />}
+            renderValue={(selected) => (
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {selected.map((value) => (
+                  <div
+                    key={value}
+                    label={value}
+                    className="bg-azul text-white px-3 py-1 rounded-md  flex items-center font-bold cursor-pointer"
+                    onClick={() => marca.splice({ value })}
+                  >
+                    {value}
+                    {/* <IoClose className="text-amarillo font-bold text-2xl ml-1" /> */}
+                  </div>
+                ))}
+              </Box>
+            )}
+            MenuProps={MenuProps}
+            className="w-full"
           >
-            <MenuItem value="Chevrolet">Hescher</MenuItem>
-            <MenuItem value="Citroen">Mahler</MenuItem>
+            {marcas.map((marca) => (
+              <MenuItem
+                key={marca}
+                value={marca}
+                style={getStyles2(marca, marca, theme)}
+              >
+                {marca}
+              </MenuItem>
+            ))}
           </Select>
         </div>
         <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
@@ -572,7 +618,7 @@ export default function BuscadorFamilia() {
                     </div>
                     <input
                       type="number"
-                      value={cantidad}
+                      value={cantidad2}
                       onChange={(e) => handleCantidad2()}
                       min="0"
                       max="1000"
@@ -749,7 +795,7 @@ export default function BuscadorFamilia() {
                     </div>
                     <input
                       type="number"
-                      value={cantidad}
+                      value={cantidad3}
                       onChange={(e) => handleCantidad3()}
                       min="0"
                       max="1000"
