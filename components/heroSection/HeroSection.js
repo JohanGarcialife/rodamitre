@@ -132,7 +132,7 @@ export default function HeroSection(props) {
         </>
       )}
       {isLogin === true && (
-        <div className="px-2 pt-52 pb-24">
+        <div className=" pt-72 pb-24">
           {buscador === "Familia" && <BuscadorFamilia />}
           {buscador === "Vehiculo" && <BuscadorVehiculo />}
           {buscador === "Rapida" && <BuscadorRapida />}

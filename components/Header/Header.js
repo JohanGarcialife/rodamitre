@@ -3,6 +3,7 @@ import Image from "next/image";
 import Topbar from "./topbar/Topbar";
 import Menu from "./menu/Menu";
 import { IoIosArrowDown } from "react-icons/io";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export default function Header(props) {
   const {
@@ -16,6 +17,8 @@ export default function Header(props) {
     buscador,
   } = props;
   const [scrolled, setScrolled] = useState(false);
+
+  const { width } = useWindowSize();
 
   useEffect(() => {
     const onScroll = () => {
@@ -67,6 +70,15 @@ export default function Header(props) {
         </>
       ) : (
         <div className="absolute top-0 w-full z-50 bg-azul/50">
+          <div>
+            <Image
+              src="/austin-distel-tLZhFRLj6nY-unsplash.jpg"
+              height={100}
+              width={width}
+              alt="Imagen"
+              className="mr-3"
+            />
+          </div>
           <div className="px-12">
             <Topbar
               show={show}
