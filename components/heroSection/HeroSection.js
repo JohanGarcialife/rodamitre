@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FaCheck } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import BuscadorFamilia from "../buscadores/BuscadorFamilia";
 import BuscadorVehiculo from "../buscadores/BuscadorVehiculo";
 import BuscadorRapida from "../buscadores/BuscadorRapida";
@@ -36,7 +36,13 @@ export default function HeroSection(props) {
   });
 
   return (
-    <div className="bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden font-montserrat">
+    <div
+      className={
+        isLogin === false
+          ? "bg-[url('/chicago-690365-lq.jpg')] bg-cover relative min-h-screen overflow-hidden font-montserrat"
+          : "bg-[#f5f5f5] relative min-h-screen overflow-hidden font-montserrat"
+      }
+    >
       {isLogin === false && (
         <>
           <div className="px-12 py-24">

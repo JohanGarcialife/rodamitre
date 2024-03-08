@@ -69,7 +69,7 @@ export default function Header(props) {
           )}
         </>
       ) : (
-        <div className="absolute top-0 w-full z-50 bg-azul/50">
+        <div className="absolute top-0 w-full z-50 bg-azul">
           <div>
             <Image
               src="/austin-distel-tLZhFRLj6nY-unsplash.jpg"

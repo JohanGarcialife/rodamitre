@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { AiFillInfoCircle } from "react-icons/ai";
+import { FaCircle } from "react-icons/fa";
 import {
+  Breadcrumbs,
+  Link,
   Table,
   TableBody,
   TableCell,
@@ -9,7 +12,41 @@ import {
   TableRow,
 } from "@mui/material";
 import styled from "@emotion/styled";
-import { FaCircle } from "react-icons/fa";
+import Select from "react-select";
+import { MdNavigateNext } from "react-icons/md";
+
+const autos = [
+  { value: "Aveo", label: "Aveo" },
+  { value: "400", label: "400" },
+  { value: "Astra", label: "Astra" },
+  { value: "C10", label: "C 10" },
+  { value: "Blazer", label: "Blazer" },
+  { value: "Chevy", label: "Chevy" },
+];
+
+const marcas = [
+  { value: "Chevrolet", label: "Chevrolet" },
+  { value: "Toyota", label: "Toyota" },
+  { value: "Fiat", label: "Fiat" },
+  { value: "Citroen", label: "Citroen" },
+  { value: "Nissan", label: "Nissan" },
+  { value: "Ford", label: "Ford" },
+];
+
+const motores = [
+  { value: "1.7", label: "1.7" },
+  { value: "1.8", label: "1.8" },
+  { value: "2.0", label: "2.0" },
+  { value: "2.0-16v", label: "2.0 16v" },
+  { value: "2.0-TD", label: "2.0 TD" },
+  { value: "2.0-16v", label: "2.0 TD 16v" },
+];
+
+const rubros = [
+  { value: "Bomba-de-agua", label: "Bombas de agua" },
+  { value: "Bobinas-de-ignicion", label: "Bobinas de ignición" },
+  { value: "Bombas-auxiliar-electrica", label: "Bombas auxiliar eléctrica" },
+];
 
 export default function BuscadorVehiculo() {
   const [vehiculo, setVehiculo] = useState(null);
@@ -21,19 +58,19 @@ export default function BuscadorVehiculo() {
   const [cantidad3, setCantidad3] = useState(0);
 
   function handleSelectVehiculo(event) {
-    setVehiculo(event.target.value);
+    setVehiculo(event.label);
   }
 
   function handleSelectModelo(event) {
-    setModelo(event.target.value);
+    setModelo(event.label);
   }
 
   function handleSelectRubro(event) {
-    setRubro(event.target.value);
+    setRubro(event);
   }
 
   function handleSelectMotor(event) {
-    setMotor(event.target.value);
+    setMotor(event);
   }
 
   function handleChangeCantidad(event) {
@@ -50,7 +87,7 @@ export default function BuscadorVehiculo() {
 
   const TableRowStyled = styled(TableRow)`
     &:nth-of-type(odd) {
-      background-color: #d7d7ff;
+      background-color: #e8e8ff;
     }
     &:nth-of-type(even) {
       background-color: #f5f5f5;
@@ -61,68 +98,74 @@ export default function BuscadorVehiculo() {
       text-align: center;
     }
   `;
+  function handleClick(event) {
+    event.preventDefault();
+    console.info("You clicked a breadcrumb.");
+  }
+  const breadcrumbs = [
+    <Link
+      underline="hover"
+      key="1"
+      color="inherit"
+      href="/"
+      onClick={handleClick}
+    >
+      Busqueda Vehículos
+    </Link>,
+
+    <p key="" className="text-gris">
+      {vehiculo}
+    </p>,
+    <p key="" className="text-gris">
+      {modelo}
+    </p>,
+    <Link
+      underline="hover"
+      key="2"
+      color="inherit"
+      href="/"
+      onClick={handleClick}
+    >
+      <div className="flex space-x-2 items-center">
+        {rubro?.map((rubro) => (
+          <p key="" className="text-gris">
+            {rubro.label}
+          </p>
+        ))}
+      </div>
+    </Link>,
+    <Link
+      underline="hover"
+      key="2"
+      color="inherit"
+      href="/"
+      onClick={handleClick}
+    >
+      <div className="flex space-x-2 items-center">
+        {motor?.map((motor) => (
+          <p key="" className="text-gris">
+            {motor.label}
+          </p>
+        ))}
+      </div>
+    </Link>,
+
+    <p key="" className="text-gris">
+      Página 1 de 1
+    </p>,
+  ];
 
   return (
     <>
-      <div className="flex space-x-5 font-montserrat">
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-xs uppercase ">
-            Vehículo
-          </p>
-          <select
-            className="pl-4 w-full text-black"
-            label={vehiculo}
-            value={vehiculo}
-            onChange={handleSelectVehiculo}
-          >
-            <option value="Chevrolet">Chevrolet</option>
-            <option value="Citroen">Citroen</option>
-            <option value="Fiat">Fiat</option>
-            <option value="Ford">Ford</option>
-          </select>
-        </div>
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-xs uppercase ">Modelo</p>
-          <select
-            className="pl-4 w-full text-black"
-            label={modelo}
-            value={modelo}
-            onChange={handleSelectModelo}
-          >
-            <option value="400">400</option>
-            <option value="Agile">Agile</option>
-            <option value="Astra">Astra</option>
-            <option value="Avalanche">Avalanche</option>
-          </select>
-        </div>
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-xs uppercase ">Rubro</p>
-          <select
-            className="pl-4 w-full text-black"
-            label={rubro}
-            value={rubro}
-            onChange={handleSelectRubro}
-          >
-            <option value="Bomba-de-Agua">Bomba de Agua</option>
-            <option value="Cinta-de-freno">Cinta de freno</option>
-            <option value="Cruceta">Cruceta</option>
-            <option value="Pastilla-de-freno">Pastilla de freno</option>
-          </select>
-        </div>
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
-          <p className="text-[#969696] font-bold text-xs uppercase ">Motor</p>
-          <select
-            className="pl-4 w-full text-black"
-            label={motor}
-            value={motor}
-            onChange={handleSelectMotor}
-          >
-            <option value="todos">Todos</option>
-          </select>
+      <div className="font-montserrat px-2">
+        <div className="bg-white w-fit py-2 px-3 rounded-md">
+          <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
+            {breadcrumbs}
+          </Breadcrumbs>
         </div>
       </div>
-      <div className="flex items-center justify-end mt-5">
-        <div className="flex items-center space-x-4 bg-white rounded-lg p-3  w-fit">
+      <div className="flex items-center justify-end  font-montserrat px-2">
+        <div className="flex items-center space-x-4 bg-white rounded-lg p-3 mt-5 w-fit">
           <div className="flex items-center space-x-2">
             <FaCircle className="text-green-600" />
             <p className="text-black">Stock</p>
@@ -137,37 +180,83 @@ export default function BuscadorVehiculo() {
           </div>
         </div>
       </div>
-      <div className=" flex justify-center mt-5 font-montserrat">
+      <div className="flex font-montserrat mt-5 px-2 rounded-t-md bg-white border border-[#D9D9D9]">
+        <div className="w-full p-2">
+          <p className="text-[#969696] font-bold text-xs uppercase">Marcas</p>
+
+          <Select
+            options={marcas}
+            placeholder="Seleccione una marca"
+            className="text-black font-montserrat"
+            onChange={handleSelectVehiculo}
+          />
+        </div>
+        <div className="w-full p-2">
+          <p className="text-[#969696] font-bold text-xs uppercase">Autos</p>
+
+          <Select
+            options={autos}
+            placeholder="Seleccione un auto"
+            className="text-black font-montserrat"
+            onChange={handleSelectModelo}
+          />
+        </div>
+        <div className="w-full p-2">
+          <p className="text-[#969696] font-bold text-xs uppercase">Rubros</p>
+
+          <Select
+            isMulti
+            name="rubros"
+            options={rubros}
+            className="text-black font-montserrat"
+            placeholder="Todos los rubros..."
+            onChange={handleSelectRubro}
+          />
+        </div>
+        <div className="w-full p-2">
+          <p className="text-[#969696] font-bold text-xs uppercase">Motores</p>
+
+          <Select
+            isMulti
+            name="motores"
+            options={motores}
+            className="text-black font-montserrat"
+            placeholder="Todos los vehículos..."
+            onChange={handleSelectMotor}
+          />
+        </div>
+      </div>
+      <div className=" flex justify-center font-montserrat">
         <Table>
-          <TableHead className="text-black rounded-t-lg p-5 w-full uppercase">
-            <TableRow className=" bg-amarillo flex justify-between !rounded-t-lg items-center">
+          <TableHead className="text-white rounded-t-lg p-5 w-full uppercase">
+            <TableRow className=" bg-azul flex justify-between !rounded-t-lg items-center">
               <TableCell>
-                <div className="font-bold text-black flex justify-center">
+                <div className="font-bold text-white flex justify-center">
                   ARTÍCULO
                 </div>
               </TableCell>
               <TableCell>
-                <div className="font-bold text-black flex justify-center">
+                <div className="font-bold text-white flex justify-center">
                   MOTORIZACIÓN
                 </div>
               </TableCell>
               <TableCell>
-                <div className="font-bold text-black flex justify-center">
+                <div className="font-bold text-white flex justify-center">
                   MARCA
                 </div>
               </TableCell>
               <TableCell>
-                <div className="font-bold text-black flex justify-center">
+                <div className="font-bold text-white flex justify-center">
                   COSTO
                 </div>
               </TableCell>
               <TableCell>
-                <div className="font-bold text-black flex justify-center">
+                <div className="font-bold text-white flex justify-center">
                   VENTA
                 </div>
               </TableCell>
               <TableCell>
-                <div className="font-bold text-black flex justify-center">
+                <div className="font-bold text-white flex justify-center">
                   CANTIDAD
                 </div>
               </TableCell>
@@ -257,7 +346,7 @@ export default function BuscadorVehiculo() {
                       type="number"
                       min="0"
                       max="1000"
-                      value={cantidad}
+                      value={cantidad < 1 ? 0 : cantidad}
                       onChange={handleChangeCantidad}
                       className="px-2 w-2/4 rounded-md border border-black "
                     />
@@ -342,7 +431,7 @@ export default function BuscadorVehiculo() {
                       type="number"
                       min="0"
                       max="1000"
-                      value={cantidad2}
+                      value={cantidad2 < 1 ? 0 : cantidad2}
                       onChange={handleChangeCantidad2}
                       className="px-2 w-2/4 rounded-md border border-black "
                     />
@@ -427,7 +516,7 @@ export default function BuscadorVehiculo() {
                       type="number"
                       min="0"
                       max="1000"
-                      value={cantidad3}
+                      value={cantidad3 < 1 ? 0 : cantidad3}
                       onChange={handleChangeCantidad3}
                       className="px-2 w-2/4 rounded-md border border-black "
                     />
