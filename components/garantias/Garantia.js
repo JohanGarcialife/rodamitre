@@ -1,5 +1,13 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import styled from "@emotion/styled";
 
 export default function Garantia() {
   const [open, setOpen] = useState(false);
@@ -12,6 +20,20 @@ export default function Garantia() {
   function handleSelectMotivo(event) {
     setMotivo(event.target.value);
   }
+
+  const TableRowStyled = styled(TableRow)`
+    &:nth-of-type(odd) {
+      background-color: #e8e8ff;
+    }
+    &:nth-of-type(even) {
+      background-color: #f5f5f5;
+    }
+    & td,
+    th {
+      width: fit-content;
+      text-align: center;
+    }
+  `;
 
   return (
     <>
@@ -355,30 +377,73 @@ export default function Garantia() {
             </div>
           </div>
         ) : (
-          <table className="w-full mt-5 font-montserrat">
-            <thead className="bg-amarillo text-black rounded-t-lg p-5 flex justify-between w-full ">
-              <td className="w-full text-center font-bold ">NRO DE RECLAMO</td>
-              <td className="w-full text-center font-bold ">
-                FECHA GENERACIÓN
-              </td>
-              <td className="w-full text-center font-bold ">PRODUCTO</td>
-              <td className="w-full text-center font-bold ">UNIDADES</td>
-              <td className="w-full text-center font-bold ">TRACKING PEDIDO</td>
-            </thead>
-            <tbody>
-              <tr className="bg-[#FFEEDC] text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
-                <td className="w-full text-center">Reclamo</td>
-                <td className="w-full text-center">Fecha</td>
-                <td className="w-full text-center">Producto</td>
-                <td className="w-full text-center">Cantidad</td>
-                <td className="w-full text-center">
-                  <p>Tracking</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <Table>
+            <TableHead className="text-white rounded-t-lg p-5 w-full uppercase">
+              <TableRow className=" bg-azul flex justify-between !rounded-t-lg items-center">
+                <TableCell>
+                  <div className="font-bold text-white flex justify-center">
+                    NRO DE RECLAMO
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="font-bold text-white flex justify-center">
+                    FECHA GENERACIÓN
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="font-bold text-white flex justify-center">
+                    PRODUCTO
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="font-bold text-white flex justify-center">
+                    UNIDADES
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <div className="font-bold text-white flex justify-center">
+                    TRACKING PEDIDO
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody className="bg-white">
+              <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
+                <TableCell className="w-full text-center">
+                  <div className="font-black">Reclamo</div>
+                </TableCell>
+                <TableCell className="w-full text-center">
+                  <div className="font-black">Fecha</div>
+                </TableCell>
+                <TableCell className="w-full text-center">
+                  <div className="font-black">Producto</div>
+                </TableCell>
+                <TableCell className="w-full text-center">
+                  <div className="font-black">Cantidad</div>
+                </TableCell>
+                <TableCell className="w-full flex justify-center">
+                  <div className="font-black">Tracking</div>
+                </TableCell>
+              </TableRowStyled>
+            </TableBody>
+          </Table>
         )}
       </div>
     </>
   );
+}
+{
+  /* 
+  <tbody>
+    <tr className="bg-[#FFEEDC] text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
+      <td className="w-full text-center">Reclamo</td>
+      <td className="w-full text-center">Fecha</td>
+      <td className="w-full text-center">Producto</td>
+      <td className="w-full text-center">Cantidad</td>
+      <td className="w-full text-center">
+        <p>Tracking</p>
+      </td>
+    </tr>
+  </tbody>
+</table>; */
 }
