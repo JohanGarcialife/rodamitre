@@ -5,6 +5,10 @@ import { IoClose } from "react-icons/io5";
 import { MdNavigateNext } from "react-icons/md";
 
 export default function BuscadorRapida() {
+  function handleClick(event) {
+    event.preventDefault();
+    console.info("You clicked a breadcrumb.");
+  }
   return (
     <div className="flex space-x-10 w-full font-montserrat">
       <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
