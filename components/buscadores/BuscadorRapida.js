@@ -1,10 +1,27 @@
+import { Breadcrumbs, Link } from "@mui/material";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { MdNavigateNext } from "react-icons/md";
 
 export default function BuscadorRapida() {
   return (
     <div className="flex space-x-10 w-full font-montserrat">
+      <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
+        <Link
+          underline="hover"
+          key="1"
+          color="inherit"
+          href="/"
+          onClick={handleClick}
+        >
+          Busqueda Rápida
+        </Link>
+        <p key="" className="text-gris">
+          Página 1 de 1
+        </p>
+        ,
+      </Breadcrumbs>
       <div className="w-full space-y-5">
         <div className="bg-white rounded-lg border border-black flex">
           <div className="bg-amarillo text-white rounded-l-lg flex space-x-3 text-balck p-3 w-1/5">

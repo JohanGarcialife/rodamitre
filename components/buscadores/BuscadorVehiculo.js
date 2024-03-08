@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { AiFillInfoCircle } from "react-icons/ai";
-import { FaCircle } from "react-icons/fa";
+import { FaCircle, FaMinus, FaPlus } from "react-icons/fa";
 import {
   Breadcrumbs,
   Link,
@@ -51,8 +51,8 @@ const rubros = [
 export default function BuscadorVehiculo() {
   const [vehiculo, setVehiculo] = useState(null);
   const [modelo, setModelo] = useState(null);
-  const [rubro, setRubro] = useState(null);
-  const [motor, setMotor] = useState(null);
+  const [rubro, setRubro] = useState([]);
+  const [motor, setMotor] = useState([]);
   const [cantidad, setCantidad] = useState(0);
   const [cantidad2, setCantidad2] = useState(0);
   const [cantidad3, setCantidad3] = useState(0);
@@ -102,65 +102,74 @@ export default function BuscadorVehiculo() {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
   }
-  const breadcrumbs = [
-    <Link
-      underline="hover"
-      key="1"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      Busqueda Vehículos
-    </Link>,
-
-    <p key="" className="text-gris">
-      {vehiculo}
-    </p>,
-    <p key="" className="text-gris">
-      {modelo}
-    </p>,
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      <div className="flex space-x-2 items-center">
-        {rubro?.map((rubro) => (
-          <p key="" className="text-gris">
-            {rubro.label}
-          </p>
-        ))}
-      </div>
-    </Link>,
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      <div className="flex space-x-2 items-center">
-        {motor?.map((motor) => (
-          <p key="" className="text-gris">
-            {motor.label}
-          </p>
-        ))}
-      </div>
-    </Link>,
-
-    <p key="" className="text-gris">
-      Página 1 de 1
-    </p>,
-  ];
 
   return (
     <>
       <div className="font-montserrat px-2">
         <div className="bg-white w-fit py-2 px-3 rounded-md">
           <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
-            {breadcrumbs}
+            <Link
+              underline="hover"
+              key="1"
+              color="inherit"
+              href="/"
+              onClick={handleClick}
+            >
+              Busqueda Vehículos
+            </Link>
+            ,
+            {!vehiculo ? null : (
+              <p key="" className="text-gris">
+                {vehiculo}
+              </p>
+            )}
+            ,
+            {!modelo ? null : (
+              <p key="" className="text-gris">
+                {modelo}
+              </p>
+            )}
+            ,
+            {rubro.length > 0 ? (
+              <Link
+                underline="hover"
+                key="2"
+                color="inherit"
+                href="/"
+                onClick={handleClick}
+              >
+                <div className="flex space-x-2 items-center">
+                  {rubro?.map((rubro) => (
+                    <p key="" className="text-gris">
+                      {rubro.label}
+                    </p>
+                  ))}
+                </div>
+              </Link>
+            ) : null}
+            ,
+            {motor.length > 0 ? (
+              <Link
+                underline="hover"
+                key="2"
+                color="inherit"
+                href="/"
+                onClick={handleClick}
+              >
+                <div className="flex space-x-2 items-center">
+                  {motor?.map((motor) => (
+                    <p key="" className="text-gris">
+                      {motor.label}
+                    </p>
+                  ))}
+                </div>
+              </Link>
+            ) : null}
+            ,
+            <p key="" className="text-gris">
+              Página 1 de 1
+            </p>
+            ,
           </Breadcrumbs>
         </div>
       </div>
@@ -273,50 +282,81 @@ export default function BuscadorVehiculo() {
                 </div>
               </TableCell>
             </TableRowStyled>
-
             <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
               <TableCell className="w-full text-center">
                 <div className="font-bold flex items-center space-x-3">
                   <Image
                     src="/VKPC-85097_1_SKF.jpg"
-                    height={75}
-                    width={75}
+                    height={100}
+                    width={100}
                     alt="Imagen"
                     className="mr-3"
                   />
-                  <div className="group">
-                    {" "}
-                    <AiFillInfoCircle />
-                    <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
-                      <div className="grid grid-cols-3 space-x-3">
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1 ">
-                            <p className="text-azul font-bold">Interior</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="group">
+                        {" "}
+                        <AiFillInfoCircle />
+                        <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
+                          <div className="grid grid-cols-3 space-x-3">
+                            <div className="space-y-3">
+                              <div className="bg-amarillo w-full px-10 py-1 ">
+                                <p className="text-azul font-bold">Interior</p>
+                              </div>
+                              <p>20</p>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="bg-amarillo w-full px-10 py-1">
+                                <p className="text-azul font-bold">Exterior</p>
+                              </div>
+                              <p>20</p>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="bg-amarillo w-full px-10 py-1">
+                                <p className="text-azul font-bold">Altura</p>
+                              </div>
+                              <p>20</p>
+                            </div>
                           </div>
-                          <p>20</p>
-                        </div>
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Exterior</p>
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full py-1">
+                              <p className="text-azul font-bold">Notas</p>
+                            </div>
+                            <p>Notas</p>
                           </div>
-                          <p>20</p>
-                        </div>
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Altura</p>
-                          </div>
-                          <p>20</p>
                         </div>
                       </div>
-                      <div className="space-y-3">
-                        <div className="bg-amarillo w-full py-1">
-                          <p className="text-azul font-bold">Notas</p>
-                        </div>
-                        <p>Notas</p>
+                      <p>VKPC 85097</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-black text-left">
+                        Es parte de
+                      </p>
+                      <div className="flex font-normal items-center space-x-2 text-sm text-left">
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          VKMC 01107 A1
+                        </p>
+                        <span>-</span>
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          VKMC 01107 A1
+                        </p>
+                        <span>-</span>
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          VKMC 01107 A1
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-bold text-black text-left">
+                        Intercambiable
+                      </p>
+                      <div className="flex font-normal items-center space-x-2 text-sm text-left">
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          BA358 VMG
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <p>VKPC 85097</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
@@ -339,17 +379,34 @@ export default function BuscadorVehiculo() {
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
+              {/* Contador */}
               <TableCell className="w-full flex justify-center">
                 <div className="w-full flex justify-center">
-                  <div className="w-full ">
+                  <div className="w-full flex items-center  justify-center space-x-2">
+                    <div
+                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      onClick={
+                        cantidad < 1
+                          ? () => setCantidad(0)
+                          : () => setCantidad(cantidad - 1)
+                      }
+                    >
+                      <FaMinus />
+                    </div>
                     <input
                       type="number"
                       min="0"
                       max="1000"
                       value={cantidad < 1 ? 0 : cantidad}
                       onChange={handleChangeCantidad}
-                      className="px-2 w-2/4 rounded-md border border-black "
+                      className="px-2 rounded-md border border-black h-full text-center"
                     />
+                    <div
+                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      onClick={() => setCantidad(cantidad + 1)}
+                    >
+                      <FaPlus />
+                    </div>
                   </div>
                 </div>
               </TableCell>
@@ -364,8 +421,8 @@ export default function BuscadorVehiculo() {
                 <div className="font-bold flex items-center space-x-3">
                   <Image
                     src="/VKPC-85097_1_SKF.jpg"
-                    height={75}
-                    width={75}
+                    height={100}
+                    width={100}
                     alt="Imagen"
                     className="mr-3"
                   />
@@ -424,17 +481,34 @@ export default function BuscadorVehiculo() {
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
+              {/* Contador */}
               <TableCell className="w-full flex justify-center">
                 <div className="w-full flex justify-center">
-                  <div className="w-full ">
+                  <div className="w-full flex items-center  justify-center space-x-2">
+                    <div
+                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      onClick={
+                        cantidad2 < 1
+                          ? () => setCantidad2(0)
+                          : () => setCantidad2(cantidad2 - 1)
+                      }
+                    >
+                      <FaMinus />
+                    </div>
                     <input
                       type="number"
                       min="0"
                       max="1000"
                       value={cantidad2 < 1 ? 0 : cantidad2}
                       onChange={handleChangeCantidad2}
-                      className="px-2 w-2/4 rounded-md border border-black "
+                      className="px-2 rounded-md border border-black h-full text-center"
                     />
+                    <div
+                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      onClick={() => setCantidad2(cantidad2 + 1)}
+                    >
+                      <FaPlus />
+                    </div>
                   </div>
                 </div>
               </TableCell>
@@ -449,8 +523,8 @@ export default function BuscadorVehiculo() {
                 <div className="font-bold flex items-center space-x-3">
                   <Image
                     src="/VKPC-85097_1_SKF.jpg"
-                    height={75}
-                    width={75}
+                    height={100}
+                    width={100}
                     alt="Imagen"
                     className="mr-3"
                   />
@@ -511,15 +585,31 @@ export default function BuscadorVehiculo() {
               </TableCell>
               <TableCell className="w-full flex justify-center">
                 <div className="w-full flex justify-center">
-                  <div className="w-full ">
+                  <div className="w-full flex items-center  justify-center space-x-2">
+                    <div
+                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      onClick={
+                        cantidad3 < 1
+                          ? () => setCantidad3(0)
+                          : () => setCantidad3(cantidad - 1)
+                      }
+                    >
+                      <FaMinus />
+                    </div>
                     <input
                       type="number"
                       min="0"
                       max="1000"
                       value={cantidad3 < 1 ? 0 : cantidad3}
                       onChange={handleChangeCantidad3}
-                      className="px-2 w-2/4 rounded-md border border-black "
+                      className="px-2 rounded-md border border-black h-full text-center"
                     />
+                    <div
+                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      onClick={() => setCantidad3(cantidad3 + 1)}
+                    >
+                      <FaPlus />
+                    </div>
                   </div>
                 </div>
               </TableCell>

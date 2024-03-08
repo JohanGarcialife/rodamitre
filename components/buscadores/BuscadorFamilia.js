@@ -77,10 +77,8 @@ export default function BuscadorFamilia() {
   function handleCantidad3(event) {
     setCantidad3(event.target.value);
   }
-  console.log(vehiculoName);
-  const handleChangeVehiculo = (event) => {
-    console.log(event);
 
+  const handleChangeVehiculo = (event) => {
     setVehiculoName(event);
     setFamilia(null);
     setMarca([]);
@@ -145,62 +143,74 @@ export default function BuscadorFamilia() {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
   }
-  const breadcrumbs = [
-    <Link
-      underline="hover"
-      key="1"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      Busqueda Familias
-    </Link>,
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      <div className="flex space-x-2 items-center">
-        {vehiculoName?.map((vehiculo) => (
-          <p key="" className="text-gris">
-            {vehiculo.label}
-          </p>
-        ))}
-      </div>
-    </Link>,
-    <p key="" className="text-gris">
-      {familia}
-    </p>,
-    <Link
-      underline="hover"
-      key="2"
-      color="inherit"
-      href="/"
-      onClick={handleClick}
-    >
-      <div className="flex space-x-2 items-center">
-        {marca?.map((marca) => (
-          <p key="" className="text-gris">
-            {marca.label}
-          </p>
-        ))}
-      </div>
-    </Link>,
-    <p key="" className="text-gris">
-      {rubro}
-    </p>,
-    <p key="" className="text-gris">
-      Página 1 de 1
-    </p>,
-  ];
+  
   return (
     <>
       <div className="font-montserrat px-2">
         <div className="bg-white w-fit py-2 px-3 rounded-md">
           <Breadcrumbs separator={<MdNavigateNext />} aria-label="breadcrumb">
-            {breadcrumbs}
+            <Link
+              underline="hover"
+              key="1"
+              color="inherit"
+              href="/"
+              onClick={handleClick}
+            >
+              Busqueda Familias
+            </Link>
+            ,
+            {vehiculoName.length > 0 ? (
+              <Link
+                underline="hover"
+                key="2"
+                color="inherit"
+                href="/"
+                onClick={handleClick}
+              >
+                <div className="flex space-x-2 items-center">
+                  {vehiculoName?.map((vehiculo) => (
+                    <p key="" className="text-gris">
+                      {vehiculo.label}
+                    </p>
+                  ))}
+                </div>
+              </Link>
+            ) : null}
+            ,
+            {!familia ? null : (
+              <p key="" className="text-gris">
+                {familia}
+              </p>
+            )}
+            ,
+            {marca.length > 0 ? (
+              <Link
+                underline="hover"
+                key="2"
+                color="inherit"
+                href="/"
+                onClick={handleClick}
+              >
+                <div className="flex space-x-2 items-center">
+                  {marca?.map((marca) => (
+                    <p key="" className="text-gris">
+                      {marca.label}
+                    </p>
+                  ))}
+                </div>
+              </Link>
+            ) : null}
+            ,
+            {!rubro ? null : (
+              <p key="" className="text-gris">
+                {rubro}
+              </p>
+            )}
+            ,
+            <p key="" className="text-gris">
+              Página 1 de 1
+            </p>
+            ,
           </Breadcrumbs>
         </div>
       </div>
@@ -290,47 +300,49 @@ export default function BuscadorFamilia() {
           <TableBody className="bg-white">
             <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
               <TableCell className="w-full text-center">
-                <div className="font-bold flex items-center justify-center space-x-3">
+                <div className="font-bold flex items-center justify-start  space-x-3">
                   <Image
                     src="/VKPC-85097_1_SKF.jpg"
-                    height={75}
-                    width={75}
+                    height={100}
+                    width={100}
                     alt="Imagen"
                     className="mr-3"
                   />
-                  <div className="group">
-                    {" "}
-                    <AiFillInfoCircle />
-                    <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
-                      <div className="grid grid-cols-3 space-x-3">
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1 ">
-                            <p className="text-azul font-bold">Interior</p>
+                  <div className="flex items-center space-x-2">
+                    <div className="group">
+                      {" "}
+                      <AiFillInfoCircle />
+                      <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
+                        <div className="grid grid-cols-3 space-x-3">
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full px-10 py-1 ">
+                              <p className="text-azul font-bold">Interior</p>
+                            </div>
+                            <p>20</p>
                           </div>
-                          <p>20</p>
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full px-10 py-1">
+                              <p className="text-azul font-bold">Exterior</p>
+                            </div>
+                            <p>20</p>
+                          </div>
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full px-10 py-1">
+                              <p className="text-azul font-bold">Altura</p>
+                            </div>
+                            <p>20</p>
+                          </div>
                         </div>
                         <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Exterior</p>
+                          <div className="bg-amarillo w-full py-1">
+                            <p className="text-azul font-bold">Notas</p>
                           </div>
-                          <p>20</p>
+                          <p>Notas</p>
                         </div>
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Altura</p>
-                          </div>
-                          <p>20</p>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="bg-amarillo w-full py-1">
-                          <p className="text-azul font-bold">Notas</p>
-                        </div>
-                        <p>Notas</p>
                       </div>
                     </div>
+                    <p>VKPC 85097</p>
                   </div>
-                  <p>VKPC 85097</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
@@ -427,7 +439,7 @@ export default function BuscadorFamilia() {
                       max="1000"
                       value={cantidad < 1 ? 0 : cantidad}
                       onChange={handleCantidad}
-                      className="px-2 rounded-md border border-black h-full"
+                      className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
                       className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
@@ -465,48 +477,80 @@ export default function BuscadorFamilia() {
               </TableCell>
             </TableRowStyled>
             <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
-              <TableCell className="w-full text-center">
-                <div className="font-bold flex items-center justify-center space-x-3">
+              <TableCell className="w-full ">
+                <div className="font-bold flex items-center justify-start space-x-3">
                   <Image
                     src="/VKPC-85097_1_SKF.jpg"
-                    height={75}
-                    width={75}
+                    height={100}
+                    width={100}
                     alt="Imagen"
                     className="mr-3"
                   />
-                  <div className="group">
-                    {" "}
-                    <AiFillInfoCircle />
-                    <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
-                      <div className="grid grid-cols-3 space-x-3">
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1 ">
-                            <p className="text-azul font-bold">Interior</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2">
+                      <div className="group">
+                        {" "}
+                        <AiFillInfoCircle />
+                        <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
+                          <div className="grid grid-cols-3 space-x-3">
+                            <div className="space-y-3">
+                              <div className="bg-amarillo w-full px-10 py-1 ">
+                                <p className="text-azul font-bold">Interior</p>
+                              </div>
+                              <p>20</p>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="bg-amarillo w-full px-10 py-1">
+                                <p className="text-azul font-bold">Exterior</p>
+                              </div>
+                              <p>20</p>
+                            </div>
+                            <div className="space-y-3">
+                              <div className="bg-amarillo w-full px-10 py-1">
+                                <p className="text-azul font-bold">Altura</p>
+                              </div>
+                              <p>20</p>
+                            </div>
                           </div>
-                          <p>20</p>
-                        </div>
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Exterior</p>
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full py-1">
+                              <p className="text-azul font-bold">Notas</p>
+                            </div>
+                            <p>Notas</p>
                           </div>
-                          <p>20</p>
-                        </div>
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Altura</p>
-                          </div>
-                          <p>20</p>
                         </div>
                       </div>
-                      <div className="space-y-3">
-                        <div className="bg-amarillo w-full py-1">
-                          <p className="text-azul font-bold">Notas</p>
-                        </div>
-                        <p>Notas</p>
+                      <p>VKPC 85097</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-black text-left">
+                        Es parte de
+                      </p>
+                      <div className="flex font-normal items-center space-x-2 text-sm text-left">
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          VKMC 01107 A1
+                        </p>
+                        <span>-</span>
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          VKMC 01107 A1
+                        </p>
+                        <span>-</span>
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          VKMC 01107 A1
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-bold text-black text-left">
+                        Intercambiable
+                      </p>
+                      <div className="flex font-normal items-center space-x-2 text-sm text-left">
+                        <p className="cursor-pointer hover:border-b-2 hover:border-amarillo">
+                          BA358 VMG
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <p>VKPC 85097</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
@@ -551,7 +595,7 @@ export default function BuscadorFamilia() {
                       max="1000"
                       value={cantidad2 < 1 ? 0 : cantidad2}
                       onChange={handleCantidad2}
-                      className="px-2 rounded-md border border-black h-full"
+                      className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
                       className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
@@ -585,47 +629,49 @@ export default function BuscadorFamilia() {
             </TableRowStyled>
             <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
               <TableCell className="w-full text-center">
-                <div className="font-bold flex items-center justify-center space-x-3">
+                <div className="font-bold flex items-center justify-start  space-x-3">
                   <Image
                     src="/VKPC-85097_1_SKF.jpg"
-                    height={75}
-                    width={75}
+                    height={100}
+                    width={100}
                     alt="Imagen"
                     className="mr-3"
                   />
-                  <div className="group">
-                    {" "}
-                    <AiFillInfoCircle />
-                    <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
-                      <div className="grid grid-cols-3 space-x-3">
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1 ">
-                            <p className="text-azul font-bold">Interior</p>
+                  <div className="flex items-center space-x-2">
+                    <div className="group">
+                      {" "}
+                      <AiFillInfoCircle />
+                      <div className="absolute z-30 hidden group-hover:block bg-white text-black p-3 rounded-md border border-gris space-y-3">
+                        <div className="grid grid-cols-3 space-x-3">
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full px-10 py-1 ">
+                              <p className="text-azul font-bold">Interior</p>
+                            </div>
+                            <p>20</p>
                           </div>
-                          <p>20</p>
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full px-10 py-1">
+                              <p className="text-azul font-bold">Exterior</p>
+                            </div>
+                            <p>20</p>
+                          </div>
+                          <div className="space-y-3">
+                            <div className="bg-amarillo w-full px-10 py-1">
+                              <p className="text-azul font-bold">Altura</p>
+                            </div>
+                            <p>20</p>
+                          </div>
                         </div>
                         <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Exterior</p>
+                          <div className="bg-amarillo w-full py-1">
+                            <p className="text-azul font-bold">Notas</p>
                           </div>
-                          <p>20</p>
+                          <p>Notas</p>
                         </div>
-                        <div className="space-y-3">
-                          <div className="bg-amarillo w-full px-10 py-1">
-                            <p className="text-azul font-bold">Altura</p>
-                          </div>
-                          <p>20</p>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="bg-amarillo w-full py-1">
-                          <p className="text-azul font-bold">Notas</p>
-                        </div>
-                        <p>Notas</p>
                       </div>
                     </div>
+                    <p>VKPC 85097</p>
                   </div>
-                  <p>VKPC 85097</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
@@ -734,7 +780,7 @@ export default function BuscadorFamilia() {
                       max="1000"
                       value={cantidad3 < 1 ? 0 : cantidad3}
                       onChange={handleCantidad3}
-                      className="px-2 rounded-md border border-black h-full"
+                      className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
                       className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Select from "react-select";
 
 export default function Reclamos() {
   const [origen, setOrigen] = useState(null);
@@ -6,7 +7,7 @@ export default function Reclamos() {
   const [pedido, setPedido] = useState(null);
 
   function handleSelectOrigen(event) {
-    setOrigen(event.target.value);
+    setOrigen(event.label);
   }
 
   function handleSelectFecha(event) {
@@ -17,26 +18,28 @@ export default function Reclamos() {
     setPedido(event.target.value);
   }
 
+  const origenes = [
+    { value: "Web", label: "Web" },
+    { value: "Email", label: "E-mail" },
+    { value: "Telefono", label: "Teléfono" },
+    { value: "Vendedor", label: "Vendedor" },
+  ];
+
   return (
     <>
-      <div className="flex space-x-5 font-montserrat">
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
+      <div className="flex space-x-5 font-montserrat rounded-t-md bg-white px-2">
+        <div className=" border border-[#D9D9D9] w-full p-2">
           <p className="text-[#969696] font-bold text-xs uppercase ">
             Origen del Pedido
           </p>
-          <select
-            className="pl-4 w-full text-black"
-            label={origen}
-            value={origen}
+          <Select
+            options={origenes}
+            placeholder="Todas las familias..."
+            className="text-black font-montserrat"
             onChange={handleSelectOrigen}
-          >
-            <option value="Web">Web</option>
-            <option value="Email">Email</option>
-            <option value="Teléfono">Teléfono</option>
-            <option value="Vendedor">Vendedor</option>
-          </select>
+          />
         </div>
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
+        <div className="border border-[#D9D9D9] w-full p-2">
           <p className="text-[#969696] font-bold text-xs uppercase ">
             Fecha de Factura / Pedido
           </p>
@@ -48,7 +51,7 @@ export default function Reclamos() {
             onChange={handleSelectFecha}
           />
         </div>
-        <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2">
+        <div className="  border border-[#D9D9D9] w-full p-2">
           <p className="text-[#969696] font-bold text-xs uppercase">
             Numero de Factura / Pedido
           </p>
@@ -62,7 +65,7 @@ export default function Reclamos() {
           />
         </div>
       </div>
-      <div className="rounded-md bg-white border border-[#D9D9D9] w-full p-2 mt-5 font-montserrat">
+      <div className=" border border-[#D9D9D9] w-full p-2 font-montserrat">
         <p className="text-[#969696] font-bold text-xs uppercase ">
           Comentario
         </p>
