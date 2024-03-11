@@ -306,7 +306,7 @@ export default function BuscadorOferta() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT IBIZA</p>
                   <div className="group">
                     {" "}
@@ -321,7 +321,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT INCA</p>
                   <div className="group">
                     {" "}
@@ -336,7 +336,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW CROSSFOX</p>
                   <div className="group">
                     {" "}
@@ -353,7 +353,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW FOX</p>
                   <div className="group">
                     {" "}
@@ -466,7 +466,7 @@ export default function BuscadorOferta() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>Varias Varios (...)</p>
                   <div className="group">
                     {" "}
@@ -478,7 +478,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT IBIZA</p>
                   <div className="group">
                     {" "}
@@ -493,7 +493,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT INCA</p>
                   <div className="group">
                     {" "}
@@ -508,7 +508,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW CROSSFOX</p>
                   <div className="group">
                     {" "}
@@ -525,7 +525,7 @@ export default function BuscadorOferta() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW FOX</p>
                   <div className="group">
                     {" "}
@@ -585,9 +585,13 @@ export default function BuscadorOferta() {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="w-full text-center">
-                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold">
+              <TableCell className="w-full text-center space-y-2">
+                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold hover:bg-azul hover:text-amarillo">
                   <p>Pedir</p>
+                </div>
+
+                <div className="font-bold text-green-600">
+                  <p>Disponible</p>
                 </div>
               </TableCell>
             </TableRowStyled>
@@ -638,7 +642,7 @@ export default function BuscadorOferta() {
               </TableCell>
 
               <TableCell className="w-full text-center">
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>Varias Varios (...)</p>
                   <div className="group">
                     {" "}
@@ -692,9 +696,13 @@ export default function BuscadorOferta() {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="w-full text-center">
-                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold">
+              <TableCell className="w-full text-center space-y-2">
+                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold hover:bg-azul hover:text-amarillo">
                   <p>Pedir</p>
+                </div>
+
+                <div className="font-bold text-red-600">
+                  <p>Sin Stock</p>
                 </div>
               </TableCell>
             </TableRowStyled>

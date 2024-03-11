@@ -432,18 +432,4 @@ export default function Garantia() {
     </>
   );
 }
-{
-  /* 
-  <tbody>
-    <tr className="bg-[#FFEEDC] text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
-      <td className="w-full text-center">Reclamo</td>
-      <td className="w-full text-center">Fecha</td>
-      <td className="w-full text-center">Producto</td>
-      <td className="w-full text-center">Cantidad</td>
-      <td className="w-full text-center">
-        <p>Tracking</p>
-      </td>
-    </tr>
-  </tbody>
-</table>; */
-}
+

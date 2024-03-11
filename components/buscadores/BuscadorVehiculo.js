@@ -384,7 +384,7 @@ export default function BuscadorVehiculo() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad(0)
@@ -402,7 +402,7 @@ export default function BuscadorVehiculo() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad(cantidad + 1)}
                     >
                       <FaPlus />
@@ -410,9 +410,13 @@ export default function BuscadorVehiculo() {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="w-full text-center">
-                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold">
+              <TableCell className="w-full text-center space-y-2">
+                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold hover:bg-azul hover:text-amarillo">
                   <p>Pedir</p>
+                </div>
+
+                <div className="font-bold text-green-600">
+                  <p>Disponible</p>
                 </div>
               </TableCell>
             </TableRowStyled>
@@ -486,7 +490,7 @@ export default function BuscadorVehiculo() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad2 < 1
                           ? () => setCantidad2(0)
@@ -504,7 +508,7 @@ export default function BuscadorVehiculo() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad2(cantidad2 + 1)}
                     >
                       <FaPlus />
@@ -512,9 +516,13 @@ export default function BuscadorVehiculo() {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="w-full text-center">
-                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold">
+              <TableCell className="w-full text-center space-y-2">
+                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold hover:bg-azul hover:text-amarillo">
                   <p>Pedir</p>
+                </div>
+
+                <div className="font-bold text-red-600">
+                  <p>Sin Stock</p>
                 </div>
               </TableCell>
             </TableRowStyled>
@@ -587,7 +595,7 @@ export default function BuscadorVehiculo() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad3 < 1
                           ? () => setCantidad3(0)
@@ -605,7 +613,7 @@ export default function BuscadorVehiculo() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad3(cantidad3 + 1)}
                     >
                       <FaPlus />
@@ -613,9 +621,13 @@ export default function BuscadorVehiculo() {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="w-full text-center">
-                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold">
+              <TableCell className="w-full text-center space-y-2">
+                <div className="py-1 px-2 bg-amarillo text-azul rounded-sm cursor-pointer font-bold hover:bg-azul hover:text-amarillo">
                   <p>Pedir</p>
+                </div>
+
+                <div className="font-bold text-[#EFBE5E]">
+                  <p>Consultar Stock</p>
                 </div>
               </TableCell>
             </TableRowStyled>

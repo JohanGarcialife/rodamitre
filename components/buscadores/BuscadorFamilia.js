@@ -143,7 +143,7 @@ export default function BuscadorFamilia() {
     event.preventDefault();
     console.info("You clicked a breadcrumb.");
   }
-  
+
   return (
     <>
       <div className="font-montserrat px-2">
@@ -346,7 +346,7 @@ export default function BuscadorFamilia() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT IBIZA</p>
                   <div className="group">
                     {" "}
@@ -361,7 +361,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT INCA</p>
                   <div className="group">
                     {" "}
@@ -376,7 +376,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW CROSSFOX</p>
                   <div className="group">
                     {" "}
@@ -393,7 +393,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW FOX</p>
                   <div className="group">
                     {" "}
@@ -424,7 +424,7 @@ export default function BuscadorFamilia() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad(0)
@@ -442,7 +442,7 @@ export default function BuscadorFamilia() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad(cantidad + 1)}
                     >
                       <FaPlus />
@@ -463,17 +463,6 @@ export default function BuscadorFamilia() {
                 <div className="font-bold text-green-600">
                   <p>Disponible</p>
                 </div>
-
-                {/* {product.stock === 0 && (
-                    <div className="font-bold text-red-600">
-                      <p>Sin Stock</p>
-                    </div>
-                  )}
-                  {product.stock === null && (
-                    <div className="font-bold text-red-600">
-                      <p>Sin Stock</p>
-                    </div>
-                  )} */}
               </TableCell>
             </TableRowStyled>
             <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
@@ -554,7 +543,7 @@ export default function BuscadorFamilia() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>Varias Varios (...)</p>
                   <div className="group">
                     {" "}
@@ -580,7 +569,7 @@ export default function BuscadorFamilia() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad2(0)
@@ -598,7 +587,7 @@ export default function BuscadorFamilia() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad2(cantidad2 + 1)}
                     >
                       <FaPlus />
@@ -619,12 +608,6 @@ export default function BuscadorFamilia() {
                 <div className="font-bold text-red-600">
                   <p>Sin Stock</p>
                 </div>
-
-                {/* {product.stock === null && (
-                    <div className="font-bold text-red-600">
-                      <p>Sin Stock</p>
-                    </div>
-                  )} */}
               </TableCell>
             </TableRowStyled>
             <TableRowStyled className="text-black p-5 flex justify-between w-full last-of-type:rounded-b-lg items-center">
@@ -674,8 +657,8 @@ export default function BuscadorFamilia() {
                   </div>
                 </div>
               </TableCell>
-              <TableCell className="w-full text-center">
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+              <TableCell className="w-full  text-left">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>Varias Varios (...)</p>
                   <div className="group">
                     {" "}
@@ -687,7 +670,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT IBIZA</p>
                   <div className="group">
                     {" "}
@@ -702,7 +685,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>SEAT INCA</p>
                   <div className="group">
                     {" "}
@@ -717,7 +700,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW CROSSFOX</p>
                   <div className="group">
                     {" "}
@@ -734,7 +717,7 @@ export default function BuscadorFamilia() {
                     <CiCircleInfo className="font-bold text-lg" />
                   </div>
                 </div>
-                <div className="text-gris text-xs flex items-center space-x-2 justify-center">
+                <div className="text-gris text-xs flex items-center space-x-2 justify-start">
                   <p>VW FOX</p>
                   <div className="group">
                     {" "}
@@ -765,7 +748,7 @@ export default function BuscadorFamilia() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad3(0)
@@ -783,7 +766,7 @@ export default function BuscadorFamilia() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-3 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad3(cantidad3 + 1)}
                     >
                       <FaPlus />
