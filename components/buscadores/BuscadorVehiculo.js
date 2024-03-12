@@ -173,22 +173,7 @@ export default function BuscadorVehiculo() {
           </Breadcrumbs>
         </div>
       </div>
-      <div className="flex items-center justify-end  font-montserrat px-2">
-        <div className="flex items-center space-x-4 bg-white rounded-lg p-3 mt-5 w-fit">
-          <div className="flex items-center space-x-2">
-            <FaCircle className="text-green-600" />
-            <p className="text-black">Stock</p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FaCircle className="text-red-600" />
-            <p className="text-black">Sin Stock</p>
-          </div>
-          <div className="flex items-center space-x-2">
-            <FaCircle className="text-[#EFBE5E]" />
-            <p className="text-black">Consultar Stock</p>
-          </div>
-        </div>
-      </div>
+
       <div className="flex font-montserrat mt-5 px-2 rounded-t-md bg-white border border-[#D9D9D9]">
         <div className="w-full p-2">
           <p className="text-[#969696] font-bold text-xs uppercase">Marcas</p>
@@ -365,17 +350,17 @@ export default function BuscadorVehiculo() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-green-600">
+                <div className="font-bold ">
                   <p>SFK</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-green-600">
+                <div className="font-bold ">
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-green-600">
+                <div className="font-bold ">
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
@@ -384,7 +369,7 @@ export default function BuscadorVehiculo() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad(0)
@@ -402,7 +387,7 @@ export default function BuscadorVehiculo() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad(cantidad + 1)}
                     >
                       <FaPlus />
@@ -471,17 +456,17 @@ export default function BuscadorVehiculo() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-red-600">
+                <div className="font-bold ">
                   <p>SFK</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-red-600">
+                <div className="font-bold ">
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-red-600">
+                <div className="font-bold ">
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
@@ -490,7 +475,7 @@ export default function BuscadorVehiculo() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad2 < 1
                           ? () => setCantidad2(0)
@@ -508,7 +493,7 @@ export default function BuscadorVehiculo() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad2(cantidad2 + 1)}
                     >
                       <FaPlus />
@@ -577,17 +562,17 @@ export default function BuscadorVehiculo() {
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-[#EFBE5E]">
+                <div className="font-bold ">
                   <p>SFK</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-[#EFBE5E]">
+                <div className="font-bold ">
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
               <TableCell className="w-full text-center">
-                <div className="font-bold text-[#EFBE5E]">
+                <div className="font-bold ">
                   <p>$ 9.668,68</p>
                 </div>
               </TableCell>
@@ -595,7 +580,7 @@ export default function BuscadorVehiculo() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad3 < 1
                           ? () => setCantidad3(0)
@@ -613,7 +598,7 @@ export default function BuscadorVehiculo() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad3(cantidad3 + 1)}
                     >
                       <FaPlus />

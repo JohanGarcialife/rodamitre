@@ -424,7 +424,7 @@ export default function BuscadorFamilia() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad(0)
@@ -442,7 +442,7 @@ export default function BuscadorFamilia() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad(cantidad + 1)}
                     >
                       <FaPlus />
@@ -569,7 +569,7 @@ export default function BuscadorFamilia() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad2(0)
@@ -587,7 +587,7 @@ export default function BuscadorFamilia() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad2(cantidad2 + 1)}
                     >
                       <FaPlus />
@@ -748,7 +748,7 @@ export default function BuscadorFamilia() {
                 <div className="w-full flex justify-center">
                   <div className="w-full flex items-center  justify-center space-x-2">
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={
                         cantidad < 1
                           ? () => setCantidad3(0)
@@ -766,7 +766,7 @@ export default function BuscadorFamilia() {
                       className="px-2 rounded-md border border-black h-full text-center"
                     />
                     <div
-                      className="text-amarillo p-2 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
+                      className="text-amarillo p-1 bg-azul rounded-md cursor-pointer hover:bg-amarillo hover:text-azul"
                       onClick={() => setCantidad3(cantidad3 + 1)}
                     >
                       <FaPlus />
